@@ -9,9 +9,9 @@ let n1;
 const form= document.getElementById("info");
 
 window.onload = function(){
-    const savedText = localStorage.getItem("myText"); // Retrieve saved content
+    const savedText = localStorage.getItem("myText"); 
     if (savedText) {
-        main.innerHTML= savedText; // Restore it into the page
+        main.innerHTML= savedText; 
     }
 };
 
@@ -19,15 +19,12 @@ form.addEventListener("submit", addUser);
 
 function addUser(e){
     e.preventDefault();
-    const newText = content.value.trim(); // Get and clean input
+    const newText = content.value.trim(); 
     if (newText) {
-        // Add new text to the content area
         main.innerHTML += `<p>${newText}</p>`;
 
-        // Save updated content to localStorage
         localStorage.setItem("myText", main.innerHTML);
 
-        // Clear the input field
         content.value = "";
     }
 };

@@ -65,7 +65,6 @@ body{
     background-color: #56345e;
 }
 
-/* Todo List */
 
 .container{
     width:90%;
@@ -79,9 +78,6 @@ body{
     color:#f2f5ea;
     font-weight:bold;
 }
-
-
-/* ---------------- Tablet ---------------- */
 
 @media (max-width:768px){
 
@@ -111,8 +107,6 @@ body{
     }
 
 }
-
-/* ---------------- Mobile ---------------- */
 
 @media (max-width:480px){
 
