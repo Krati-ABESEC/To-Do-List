@@ -1,0 +1,168 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:#32174d;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#f2f5ea
+}
+#header{
+    padding:20px;
+}
+
+#header h2{
+    font-size:35px;
+}
+
+#select{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+#select button{
+    background:#e75a7c;
+    color:#f2f5ea;
+    font-weight: bold;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+    margin-bottom: 10px;
+}
+
+#select button:hover{
+    background:#e73e65;
+}
+
+
+#info{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    gap:15px;
+}
+
+#text{
+    flex:1;
+    padding:15px;
+    font-size:17px;
+}
+
+#add{
+    padding:15px 30px;
+    background:#563c5c;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#add:hover{
+    background-color: #56345e;
+}
+
+/* Todo List */
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+#main{
+    width:100%;
+    padding:10px;
+    border-radius: 5px;
+    color:#f2f5ea;
+    font-weight:bold;
+}
+
+
+/* ---------------- Tablet ---------------- */
+
+@media (max-width:768px){
+
+    #header h2{
+        font-size:30px;
+    }
+
+    #select{
+        justify-content:center;
+    }
+
+    #select button{
+        width:auto;
+        margin-left:5px;
+    }
+
+    #info{
+        flex-direction:column;
+    }
+
+    #text{
+        width:100%;
+    }
+
+    #add{
+        width:100%;
+    }
+
+}
+
+/* ---------------- Mobile ---------------- */
+
+@media (max-width:480px){
+
+    #header h2{
+        text-align:center;
+        font-size:26px;
+    }
+
+    #select{
+        justify-content: center;
+        gap:15px;
+    }
+
+    #select button{
+        width:98%;
+        font-size:15px;
+        padding:14px;
+    }
+
+    #info{
+        width:95%;
+    }
+
+    #text{
+        font-size:15px;
+        padding:12px;
+    }
+
+    #add{
+        font-size:16px;
+        padding:14px;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .box{
+        display: flex;
+        background-color: purple;
+        padding:10px;
+        gap:10px;
+        border-radius: 5px;
+        color:white;
+    }
+
+    .box button{
+        background-color: aliceblue;
+        color:black;
+        font-weight: bold;
+    }
+
+}
