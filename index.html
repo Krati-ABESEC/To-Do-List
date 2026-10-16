@@ -1,44 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List </title>
-    <link rel="stylesheet" href="myp.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive to-do app with persistent tasks, filters, and appearance controls.">
+  <title>TaskSpace — To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-
-    <header>
-        <div id="header">
-            <h2> Add Features </h2>
-        </div>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">PLAN · FOCUS · FINISH</p>
+        <h1>TaskSpace</h1>
+        <p class="subtitle">A little progress every day adds up.</p>
+      </div>
+      <button id="theme-toggle" class="button button-quiet" type="button" aria-label="Toggle light and dark theme">☀️ Theme</button>
     </header>
 
-    <section>
-        <div id="select">
-            <button id="changeBC"> Background Color </button>
-            <button id="Magic"> Magical Button </button>
-            <button id="ChangeFont"> Font Text </button>
-            <button id="changeBI"> Background Image </button>
-            <button id="textcolor"> Font Color </button>
-            <button id="reset"> Reset </button>
-            <div class="box">
-                <h3> Font size </h3>
-                <button id="increase"> + </button>
-                <button id="decrease"> - </button>
-
-            </div>
-        </div>
-        <form id="info">
-            <input id="text" type="text" placeholder="Enter text here">
-            <input id="add" type="submit" value="Add">
-        </form>
+    <section class="composer card" aria-labelledby="composer-title">
+      <h2 id="composer-title">Add a task</h2>
+      <form id="task-form">
+        <label class="sr-only" for="task-input">Task description</label>
+        <input id="task-input" name="task" type="text" maxlength="180" placeholder="What do you need to get done?" autocomplete="off" required>
+        <button class="button button-primary" type="submit">Add task</button>
+      </form>
+      <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
     </section>
 
-    <div class="container">
-        <div id="main"> </div>
-    </div>
+    <section class="task-section card" aria-labelledby="tasks-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="tasks-title">Your tasks</h2>
+          <p id="task-summary" class="muted">0 tasks remaining</p>
+        </div>
+        <button id="clear-completed" class="button button-quiet" type="button">Clear completed</button>
+      </div>
+      <div class="toolbar" role="group" aria-label="Filter tasks">
+        <button class="filter-button is-active" data-filter="all" type="button" aria-pressed="true">All</button>
+        <button class="filter-button" data-filter="active" type="button" aria-pressed="false">Active</button>
+        <button class="filter-button" data-filter="completed" type="button" aria-pressed="false">Completed</button>
+      </div>
+      <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+      <p id="empty-state" class="empty-state">Nothing here yet. Add your first task above.</p>
+    </section>
 
-    <script src="myp.js"></script>
+    <details class="appearance card">
+      <summary>Personalize your workspace</summary>
+      <div class="appearance-controls">
+        <label for="accent-color">Accent color
+          <input id="accent-color" type="color" value="#7657e8">
+        </label>
+        <label for="font-size">Task text size
+          <select id="font-size">
+            <option value="14">Small</option>
+            <option value="16" selected>Medium</option>
+            <option value="18">Large</option>
+            <option value="20">Extra large</option>
+          </select>
+        </label>
+        <button id="reset-appearance" class="button button-quiet" type="button">Reset appearance</button>
+      </div>
+    </details>
+    <footer><p>Tasks are saved in this browser on this device.</p></footer>
+  </main>
 </body>
 </html>
